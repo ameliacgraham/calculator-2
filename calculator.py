@@ -39,19 +39,19 @@ while True:
         if operator == "+":
             result = add(numbers)
         elif operator == "-":
-            result = subtract(tokens[1], tokens[2])
+            result = subtract(numbers)
         elif operator == "*":
-            result = multiply(tokens[1], tokens[2])
+            result = multiply(numbers)
         elif operator == "/":
-            result = divide(tokens[1], tokens[2])
+            result = divide(numbers)
         elif operator == "square":
-            result = square(tokens[1])
+            result = square(numbers)
         elif operator == "cube":
-            result = cube(tokens[1])
+            result = cube(numbers)
         elif operator == "pow":
-            result = power(tokens[1], tokens[2])
+            result = power(numbers)
         elif operator == "mod":
-            result = mod(tokens[1], tokens[2])
+            result = mod(numbers)
         else:
             print "Invalid entry"
             continue
