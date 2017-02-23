@@ -19,8 +19,8 @@ from arithmetic import *
 while True:
     input = raw_input()
     input_split = input.split(" ")
-    input_split[1] = int(input_split[1])
     try:
+        input_split[1] = int(input_split[1])
         input_split[2] = int(input_split[2])
     except:
         pass
