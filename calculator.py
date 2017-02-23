@@ -16,6 +16,14 @@ calculator program yourself in this file.
 
 from arithmetic_2 import *
 
+"""WORK IN PROGRESS
+def my_reduce(any_function, some_iterable):
+    """call any function with each item of some iterable.
+    any_function must take two parameters."""
+    for number in some_iterable:
+        result = any_function(some_iterable)
+"""
+
 while True:
     # Get user input and splice it into a list where there is a space
     user_input = raw_input()
@@ -37,7 +45,7 @@ while True:
     # Calls each function depending on the operator
     else:
         if operator == "+":
-            result = reduce(lambda x, y: x+y, numbers)
+            result = reduce(add, numbers)
         elif operator == "-":
             result = reduce(lambda x, y: x-y, numbers)
         elif operator == "*":
