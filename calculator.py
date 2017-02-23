@@ -19,22 +19,28 @@ from arithmetic import *
 while True:
     input = raw_input()
     input_split = input.split(" ")
+    input_split[1] = int(input_split[1])
+    try:
+        input_split[2] = int(input_split[2])
+    except:
+        pass
     if input_split[0] == "q":
         break
     else:
         if input_split[0] == "+":
-            add(input_split[1], input_split[2])
+            result = add(input_split[1], input_split[2])
         elif input_split[0] == "-":
-            subtract(input_split[1], input_split[2])
+            result = subtract(input_split[1], input_split[2])
         elif input_split[0] == "*":
-            multiply(input_split[1], input_split[2])
+            result = multiply(input_split[1], input_split[2])
         elif input_split[0] == "/":
-            divide(input_split[1], input_split[2])
+            result = divide(input_split[1], input_split[2])
         elif input_split[0] == "square":
-            square(input_split[1])
+            result = square(input_split[1])
         elif input_split[0] == "cube":
-            cube(input_split[1])
+            result = cube(input_split[1])
         elif input_split[0] == "pow":
-            power(input_split[1], input_split[2])
+            result = power(input_split[1], input_split[2])
         elif input_split[0] == "mod":
-            mod(input_split[1], input_split[2])
+            result = mod(input_split[1], input_split[2])
+        print result
