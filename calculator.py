@@ -14,20 +14,19 @@ Using our arithmetic.py file from Exercise02, create the
 calculator program yourself in this file.
 """
 
-from arithmetic import *
+from arithmetic_2 import *
 
 while True:
     # Get user input and splice it into a list where there is a space
     user_input = raw_input()
     tokens = user_input.split(" ")
     operator = tokens[0]
+    numbers = []
     
     # If there is a second and third value, converts them into integers
     try:
-        tokens[1] = int(tokens[1])
-        tokens[2] = int(tokens[2])
-    except IndexError:
-        pass
+        for num in tokens[1:]:
+            numbers.append(int(num))
     except ValueError:
         print "Invalid entry"
         continue
@@ -38,7 +37,7 @@ while True:
     # Calls each function depending on the operator
     else:
         if operator == "+":
-            result = add(tokens[1], tokens[2])
+            result = add(numbers)
         elif operator == "-":
             result = subtract(tokens[1], tokens[2])
         elif operator == "*":
