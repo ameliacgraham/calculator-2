@@ -17,30 +17,44 @@ calculator program yourself in this file.
 from arithmetic import *
 
 while True:
-    input = raw_input()
-    input_split = input.split(" ")
+    # Get user input and splice it into a list where there is a space
+    user_input = raw_input()
+    tokens = user_input.split(" ")
+    operator = tokens[0]
+    
+    # If there is a second and third value, converts them into integers
     try:
-        input_split[1] = int(input_split[1])
-        input_split[2] = int(input_split[2])
-    except:
+        tokens[1] = int(tokens[1])
+        tokens[2] = int(tokens[2])
+    except IndexError:
         pass
-    if input_split[0] == "q":
+    except ValueError:
+        print "Invalid entry"
+        continue
+
+    # Allows the user to quit
+    if operator == "q":
         break
+    # Calls each function depending on the operator
     else:
-        if input_split[0] == "+":
-            result = add(input_split[1], input_split[2])
-        elif input_split[0] == "-":
-            result = subtract(input_split[1], input_split[2])
-        elif input_split[0] == "*":
-            result = multiply(input_split[1], input_split[2])
-        elif input_split[0] == "/":
-            result = divide(input_split[1], input_split[2])
-        elif input_split[0] == "square":
-            result = square(input_split[1])
-        elif input_split[0] == "cube":
-            result = cube(input_split[1])
-        elif input_split[0] == "pow":
-            result = power(input_split[1], input_split[2])
-        elif input_split[0] == "mod":
-            result = mod(input_split[1], input_split[2])
+        if operator == "+":
+            result = add(tokens[1], tokens[2])
+        elif operator == "-":
+            result = subtract(tokens[1], tokens[2])
+        elif operator == "*":
+            result = multiply(tokens[1], tokens[2])
+        elif operator == "/":
+            result = divide(tokens[1], tokens[2])
+        elif operator == "square":
+            result = square(tokens[1])
+        elif operator == "cube":
+            result = cube(tokens[1])
+        elif operator == "pow":
+            result = power(tokens[1], tokens[2])
+        elif operator == "mod":
+            result = mod(tokens[1], tokens[2])
+        else:
+            print "Invalid entry"
+            continue
+
         print result
