@@ -37,21 +37,21 @@ while True:
     # Calls each function depending on the operator
     else:
         if operator == "+":
-            result = add(numbers)
+            result = reduce(lambda x, y: x+y, numbers)
         elif operator == "-":
-            result = subtract(numbers)
+            result = reduce(lambda x, y: x-y, numbers)
         elif operator == "*":
-            result = multiply(numbers)
+            result = reduce(lambda x, y: x*y, numbers)
         elif operator == "/":
-            result = divide(numbers)
+            result = reduce(lambda x, y: x/y, numbers)
         elif operator == "square":
             result = square(numbers)
         elif operator == "cube":
             result = cube(numbers)
         elif operator == "pow":
-            result = power(numbers)
+            result = reduce(lambda x, y: x**y, numbers)
         elif operator == "mod":
-            result = mod(numbers)
+            result = reduce(lambda x, y: x%y, numbers)
         else:
             print "Invalid entry"
             continue
